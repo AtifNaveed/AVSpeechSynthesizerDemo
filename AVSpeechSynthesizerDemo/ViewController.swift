@@ -22,7 +22,6 @@ class ViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func viewDidLoad() {
@@ -32,7 +31,7 @@ class ViewController: UIViewController {
         speechSynthesizer.delegate = self
         
         sLanguage = "en-US"
-        sTextView.text = "Hey, how are you doing today?"
+        sTextView.text = "Hey, How are you doing today? How is weather in Dubai?"
     }
     
     
@@ -49,9 +48,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func languageAction(_ sender: Any) {
-        //        for i in AVSpeechSynthesisVoice.speechVoices() {
-        //            print(i.language)
-        //        }
         let i = Int(arc4random_uniform(UInt32(AVSpeechSynthesisVoice.speechVoices().count)))
         sLanguage = AVSpeechSynthesisVoice.speechVoices()[i].language
         self.languageButton.setTitle("Language: \(sLanguage!)", for: .normal)
